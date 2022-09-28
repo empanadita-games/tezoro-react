@@ -1,0 +1,51 @@
+
+:root {
+    --background: #BEDFFF;
+    --text: #111f11;
+    height: 100%;
+    color:var(--text);
+   
+   }
+   
+html,
+body {
+    font-size:18px;
+    color:var(--text);
+    background-color: var(--background);
+    width:100vw;
+    height:100vh;
+}
+   
+div{
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-size:18px;
+    width: 100vw; 
+
+}
+
+header{
+    border-bottom: 1px solid var(--text);
+    display: flex;
+    font-size: 33px;
+    margin-bottom:27px;
+    justify-content: space-around;
+    align-items:center;
+    width:100vw;
+    height: 77px;
+}
+
+button {
+ 
+    background-color:transparent;
+    border:none;
+    font-size:18px;
+    cursor: pointer;
+}
+a{
+    color: var(--text);
+    text-decoration:none;
+    cursor: pointer;
+}
