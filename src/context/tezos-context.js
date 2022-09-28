@@ -7,7 +7,7 @@ import { InMemorySigner } from '@taquito/signer';
 const TezosContext = createContext();
 const options = {
   name: 'Sapotezos',
-  preferredNetwork: 'kathmandunet'
+  preferredNetwork: 'ghostnet'
  };
   
 const wallet = new BeaconWallet(options);
@@ -27,9 +27,9 @@ export const TezosContextProvider = ({ children }) => {
   
   const [app, setApp] = useState("");
   const [address, setAddress] = useState("");
-  const [tezos, setTezos] = useState(new TezosToolkit("https://kathmandunet.ecadinfra.com"));
+  const [tezos, setTezos] = useState(new TezosToolkit("https://ghostnet.tezos.marigold.dev/"));
   const [activeAccount, setActiveAccount] = useState("");
-  const [name, setName] = useState("")
+ 
 
   useEffect(() => {
      const getSynced = async () => {
@@ -40,37 +40,35 @@ export const TezosContextProvider = ({ children }) => {
           tezos.setWalletProvider(wallet);
           tezos.setProvider({ signer: await InMemorySigner.fromSecretKey(process.env.REACT_APP_KATHMANDU) });
           setTezos(tezos)
-          }
       }
+    };
       getSynced();
     }, [tezos]);
   
   async function sync() {
-    app.currentUser && await app.currentUser?.logOut();
     await wallet.client.clearActiveAccount();
     await wallet.client.requestPermissions({
       network: {
-        type: 'kathmandunet',
+        type: 'ghostnet',
       },
     });
+
     tezos.setWalletProvider(wallet);
     setTezos(tezos)
     let address=await wallet.getPKH()
     setAddress(address);
     setActiveAccount(await wallet?.client?.getActiveAccount());
+    setApp(app)
   }
 
   async function unsync() {
     await wallet.client.clearActiveAccount();
     setActiveAccount("")
     setAddress("");
-    setName("")
+
     //  window.location.reload();
   }
-
   async function sendTezos(amount) {
-    console.log(process.env.REACT_APP_KATHMANDU)
-    tezos.setProvider({ signer: await InMemorySigner.fromSecretKey(process.env.REACT_APP_KATHMANDU) });
     console.log(`Transfering ${amount} ꜩ to ${address}...`);
     tezos.contract.transfer({ to: 'tz1XRPyYPj85qUmY9uHRp6JeAHBrKuLvLUni', amount: parseFloat(amount) })
     .then(op => {
@@ -80,10 +78,9 @@ export const TezosContextProvider = ({ children }) => {
     .then(hash => console.log(`${hash}`))
     .catch(error => console.log(`Error: ${error} ${JSON.stringify(error, null, 2)}`));
 }
-    //  window.location.reload();
 
 
-  const wrapped = { ...app, tezos, sync, unsync, sendTezos, activeAccount, address, name};
+  const wrapped = { ...app, tezos, sync, unsync, sendTezos, activeAccount, address};
 
   return (
    
