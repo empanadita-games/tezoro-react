@@ -17,18 +17,27 @@ function App() {
     frameworkUrl: "build/sapotezos.framework.js",
     codeUrl: "build/sapotezos.wasm",
   });
+
   const handleSync = useCallback(async () => {
-    !app.activeAccount && await app.sync()
-    sendMessage("WalletConnect", "Synced", app.address); 
+    let address=''
+    !app.activeAccount ?  (address = await app.sync())
+     : address = app.address
+    address && sendMessage("GameController", "SetWallet", address );
+  }, [app, sendMessage]);
+
+  const handleSendTez = useCallback(async (amount,address) => {
+    console.log(address)
+    app.activeAccount && await app.sendTezos(amount)
   }, [app, sendMessage]);
 
   useEffect(() => {
+    addEventListener("ReactGetTezos", handleSendTez);
     addEventListener("TrySyncWallet", handleSync);
     return () => {
+      removeEventListener("ReactGetTezos", handleSendTez);
       removeEventListener("TrySyncWallet", handleSync);
     };
-  }, [addEventListener, removeEventListener, handleSync]);
-  
+  }, [addEventListener, removeEventListener, handleSync, handleSendTez]);
   return(
     <>
     <header>

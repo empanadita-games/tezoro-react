@@ -57,7 +57,8 @@ export const TezosContextProvider = ({ children }) => {
     let address=await wallet.getPKH()
     setAddress(address);
     setActiveAccount(await wallet?.client?.getActiveAccount());
-    setApp(app)
+    setApp(app) 
+    return address;
   }
 
   async function unsync() {
@@ -69,9 +70,10 @@ export const TezosContextProvider = ({ children }) => {
   }
   async function sendTezos(amount) {
     const res = await axios.post(
-      `${process.env.REACT_APP_SIGNER_URL}/sendTez`,
+      `${process.env.REACT_APP_SIGNER_URL}/sendtez`,
       {amount:amount,
-        address:'tz1XRPyYPj85qUmY9uHRp6JeAHBrKuLvLUni'}
+        address:'tz1XRPyYPj85qUmY9uHRp6JeAHBrKuLvLUni'},
+        
     )
   console.log(res)
     return res.data.hash
