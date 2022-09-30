@@ -2,10 +2,10 @@ import React, { useEffect, useCallback } from "react";
 import { useTezosContext } from "./context/tezos-context";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import { Link, Routes, Route } from "react-router-dom";
+
 // import { About } from './pages/About'
 import { Home } from './pages/Home'
 import "./styles/styles.css";
-
 
 function App() {
 
@@ -17,6 +17,7 @@ function App() {
     frameworkUrl: "build/sapotezos.framework.js",
     codeUrl: "build/sapotezos.wasm",
   });
+
   const handleSync = useCallback(() => {
     !app.activeAccount ? app.sync() : console.log('synced') 
   }, [app]);
@@ -38,8 +39,8 @@ function App() {
       <button onClick={() => !app.activeAccount ? app.sync() : app.unsync()}> 
         {!app.activeAccount ? "sync" : "unsync"}
       </button>
-      </header>  
-      {/* <button onClick={()=>{app.sendTezos(1)}}>Send</button> */}
+      </header>
+      <button onClick={()=>{app.sendTezos(1)}}>Send</button>
       <p/>
     <div>
        <Unity
@@ -50,7 +51,6 @@ function App() {
       unityProvider={unityProvider}
     /> 
     </div>
-  
 
     
      <div>

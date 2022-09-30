@@ -1,8 +1,8 @@
 import { useEffect, useState, createContext, useContext} from "react";
 import { TezosToolkit } from "@taquito/taquito";
 import { BeaconWallet } from "@taquito/beacon-wallet";
-import { InMemorySigner } from '@taquito/signer';
 
+const axios = require('axios')
 
 const TezosContext = createContext();
 const options = {
@@ -38,7 +38,6 @@ export const TezosContextProvider = ({ children }) => {
           const address =  await wallet.getPKH();
           setAddress(address);
           tezos.setWalletProvider(wallet);
-          tezos.setProvider({ signer: await InMemorySigner.fromSecretKey(process.env.REACT_APP_KATHMANDU) });
           setTezos(tezos)
       }
     };
@@ -69,15 +68,15 @@ export const TezosContextProvider = ({ children }) => {
     //  window.location.reload();
   }
   async function sendTezos(amount) {
-    console.log(`Transfering ${amount} ꜩ to ${address}...`);
-    tezos.contract.transfer({ to: 'tz1XRPyYPj85qUmY9uHRp6JeAHBrKuLvLUni', amount: parseFloat(amount) })
-    .then(op => {
-        console.log(`Waiting for ${op.hash} to be confirmed...`);
-        return op.confirmation(1).then(() => op.hash);
-    })
-    .then(hash => console.log(`${hash}`))
-    .catch(error => console.log(`Error: ${error} ${JSON.stringify(error, null, 2)}`));
-}
+    const res = await axios.post(
+      `${process.env.REACT_APP_SIGNER_URL}/send`,
+      {amount:amount,
+        address:'tz1XRPyYPj85qUmY9uHRp6JeAHBrKuLvLUni'}
+    )
+  console.log(res)
+    return res.data.hash
+  }
+
 
 
   const wrapped = { ...app, tezos, sync, unsync, sendTezos, activeAccount, address};
