@@ -1,15 +1,22 @@
-
+@font-face {
+    font-family: 'Mononoki';
+    font-display: swap;
+    font-weight: normal;
+    font-style: normal;
+    src: url('fonts/mononoki-Regular.otf') format('opentype');
+  }
 :root {
     --background: #BEDFFF;
     --text: #111f11;
     height: 100%;
     color:var(--text);
-   
    }
    
 html,
 body {
+    font-family: 'Mononoki';
     font-size:18px;
+
     color:var(--text);
     background-color: var(--background);
     width:100vw;
@@ -27,14 +34,15 @@ div{
 }
 
 header{
-    border-bottom: 1px solid var(--text);
+    border-bottom: 5px solid var(--text);
     display: flex;
-    font-size: 33px;
+    font-size: 27px;
     margin-bottom:27px;
     justify-content: space-around;
     align-items:center;
     width:100vw;
     height: 77px;
+   
 }
 
 button {

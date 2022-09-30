@@ -11,16 +11,16 @@ function App() {
 
   const  app = useTezosContext();
   const { addEventListener, removeEventListener } = useUnityContext();
-  const { unityProvider, isLoaded } = useUnityContext({
+  const { unityProvider, sendMessage, isLoaded } = useUnityContext({
     loaderUrl: "build/sapotezos.loader.js",
     dataUrl: "build/sapotezos.data",
     frameworkUrl: "build/sapotezos.framework.js",
     codeUrl: "build/sapotezos.wasm",
   });
-
-  const handleSync = useCallback(() => {
-    !app.activeAccount ? app.sync() : console.log('synced') 
-  }, [app]);
+  const handleSync = useCallback(async () => {
+    !app.activeAccount && await app.sync()
+    sendMessage("WalletConnect", "Synced", app.address); 
+  }, [app, sendMessage]);
 
   useEffect(() => {
     addEventListener("TrySyncWallet", handleSync);
@@ -33,22 +33,23 @@ function App() {
     <>
     <header>
 
-        {app.address && app.address.substr(0, 5) + "..." + app.address.substr(-5)}
+        {/* {app.address && app.address.substr(0, 5) + "..." + app.address.substr(-5)} */}
       {/* <Link to="/about">about</Link> */}
       <Link to="/">Sapotezos</Link>
       <button onClick={() => !app.activeAccount ? app.sync() : app.unsync()}> 
-        {!app.activeAccount ? "sync" : "unsync"}
+        {!app.activeAccount ? "wallet not syned" : `${app.address.substr(0, 5) + "..." + app.address.substr(-5)}: unsync` }
       </button>
       </header>
       <button onClick={()=>{app.sendTezos(1)}}>Send</button>
       <p/>
-    <div>
+    <div style={{border:'5px solid black', padding: '11px', width: '63vw'}}>
        <Unity
-      style={{  height: "auto",
-      width: "60vw",
-      aspectRatio: "4 / 3",
-      visibility: isLoaded ? "visible" : "hidden" }}
-      unityProvider={unityProvider}
+      style={{  
+        height: "auto",
+        width: "63vw",
+        aspectRatio: "16 / 9",
+        visibility: isLoaded ? "visible" : "hidden" }}
+        unityProvider={unityProvider}
     /> 
     </div>
 
