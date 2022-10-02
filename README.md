@@ -175,7 +175,7 @@ The player learns how to create a real wallet with the experience he gained here
 Empanadita games <br/>
 
 Art & Music - @toronja_gb <br/>
-Game Design & Development - @2box_tez <br/>
+Production & Game Development - @2box_tez <br/>
 Game Development - @srezu_tz <br/>
 React & Blockchain Development - @tezosmiami <br/>
 
