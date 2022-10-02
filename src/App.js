@@ -52,11 +52,11 @@ function App() {
       {/* <Link to="/about">about</Link> */}
       <Link to="/">Sapotezos</Link>
       <button onClick={() => !app.activeAccount ? app.sync() : app.unsync()}> 
-        {!app.activeAccount ? "wallet not syned" : `${app.address.substr(0, 5) + "..." + app.address.substr(-5)}: unsync` }
+        {!app.activeAccount ? "wallet not synced" : `${app.address.substr(0, 5) + "..." + app.address.substr(-5)}: unsync` }
       </button>
       </header>
-      <button onClick={()=>{app.sendTezos(1)}}>Send</button>
       <p/>
+
     <div style={{border:'5px solid black', padding: '11px', width: '63vw'}}>
        <Unity
       style={{  

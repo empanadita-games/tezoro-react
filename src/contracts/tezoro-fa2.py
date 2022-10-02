@@ -93,16 +93,16 @@ class FA2(sp.Contract):
             "name": 'Tezoro Assets',
             "description": 'Assets for Tezoro game by Empanadita Games',
             "version": "1.0.0",
-            "imageUri": "ipfs://QmXHnaNyMw7GETwU9UccbfdMfV5Sbr9dmjGcJqdkQy1GSb",
             "authors": [
-                "Seb Mondet <https://seb.mondet.org>",
+                "SmartPy <https://smartpy.io/#contact>",
                 "Javier Gracia Carpio <https://twitter.com/jagracar>",
                 "tezosmiami <https://twitter.com/tezosmiami>"
             ],
-            "homepage": "https://www.tezoro.xyz",
+            "homepage": "https://www.tezorogame.tez.page",
+            "imageUri": "ipfs://Qmec9JUpdehPhgxSMjRQUXCcTLhpasMxxCzdETbyEvaiPY",
             "source": {
                 "tools": ["SmartPy"],
-                   "location": "https://github.com/empanadita-games/sapotezos-react/src/contract/sapotezos-fa2.py",
+                   "location": "https://github.com/empanadita-games/tezoro-react/src/contracts/tezoro-fa2.py",
             },
             "interfaces": ["TZIP-012", "TZIP-016"],
             "license": { "name": "MIT" }
@@ -423,7 +423,7 @@ class FA2(sp.Contract):
 
 sp.add_compilation_target("fa2", FA2(
     administrator=sp.address("tz1XRPyYPj85qUmY9uHRp6JeAHBrKuLvLUni"),
-    metadata=sp.utils.metadata_of_url("ipfs://QmYXJv8yTtDQKLZeChitD8tkUhwWK4qMPnvtnG48dXeqPU")))
+    metadata=sp.utils.metadata_of_url("ipfs://Qmf2sWAEL7Z2RfKPETjacqbS2E2Ef4HbrPDhjYpJvigZPm")))
 
 
 @sp.add_test(name="Fa2")
@@ -435,7 +435,7 @@ def test():
     sc.h2("Prestamo")
     c1 = FA2(
       administrator=sp.address("tz1XRPyYPj85qUmY9uHRp6JeAHBrKuLvLUni"),
-      metadata=sp.utils.metadata_of_url("ipfs://QmYXJv8yTtDQKLZeChitD8tkUhwWK4qMPnvtnG48dXeqPU"),
+      metadata=sp.utils.metadata_of_url("ipfs://Qmf2sWAEL7Z2RfKPETjacqbS2E2Ef4HbrPDhjYpJvigZPm"),
 
     )
     sc += c1

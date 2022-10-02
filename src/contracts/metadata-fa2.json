@@ -1,0 +1,251 @@
+{
+    "name": "Tezoro Assets",
+    "description": "Assets contract for Tezoro game by Empanadita Games",
+    "version": "1.0.0",
+    "authors": [
+        "SmartPy <https://smartpy.io/#contact>",
+        "Javier Gracia Carpio <https://twitter.com/jagracar>",
+        "tezosmiami <https://twitter.com/tezosmiami>"
+    ],
+    "homepage": "https://www.tezorogame.tez.page",
+    "imageUri": "ipfs://Qmec9JUpdehPhgxSMjRQUXCcTLhpasMxxCzdETbyEvaiPY",
+    "source": { "tools": [ "SmartPy" ], "location": "https://github.com/empanadita-games/tezoro-react/src/contracts/tezoro-fa2.py" },
+    "interfaces": [ "TZIP-012", "TZIP-016", "TZIP-021" ],
+    "license": { "name": "MIT" },
+    "views": [
+      {
+        "name": "all_tokens",
+        "pure": true,
+        "description": "Returns a list with all the token ids.\n\n        ",
+        "implementations": [
+          {
+            "michelsonStorageView": {
+              "returnType": { "prim": "list", "args": [ { "prim": "nat" } ] },
+              "code": [
+                { "prim": "DUP" },
+                { "prim": "CAR" },
+                { "prim": "CAR" },
+                { "prim": "CDR" },
+                { "prim": "NIL", "args": [ { "prim": "nat" } ] },
+                { "prim": "SWAP" },
+                { "prim": "PUSH", "args": [ { "prim": "nat" }, { "int": "0" } ] },
+                { "prim": "DUP" },
+                { "prim": "DUP", "args": [ { "int": "3" } ] },
+                { "prim": "COMPARE" },
+                { "prim": "GT" },
+                {
+                  "prim": "LOOP",
+                  "args": [
+                    [
+                      { "prim": "DUP" },
+                      { "prim": "DIG", "args": [ { "int": "3" } ] },
+                      { "prim": "SWAP" },
+                      { "prim": "CONS" },
+                      { "prim": "DUG", "args": [ { "int": "2" } ] },
+                      { "prim": "PUSH", "args": [ { "prim": "nat" }, { "int": "1" } ] },
+                      { "prim": "ADD" },
+                      { "prim": "DUP" },
+                      { "prim": "DUP", "args": [ { "int": "3" } ] },
+                      { "prim": "COMPARE" },
+                      { "prim": "GT" }
+                    ]
+                  ]
+                },
+                { "prim": "DROP", "args": [ { "int": "2" } ] },
+                { "prim": "SWAP" },
+                { "prim": "DROP" },
+                { "prim": "NIL", "args": [ { "prim": "nat" } ] },
+                { "prim": "SWAP" },
+                { "prim": "ITER", "args": [ [ { "prim": "CONS" } ] ] }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "count_tokens",
+        "pure": true,
+        "description": "Returns how many tokens are in this FA2 contract.\n\n        ",
+        "implementations": [ { "michelsonStorageView": { "returnType": { "prim": "nat" }, "code": [ { "prim": "CAR" }, { "prim": "CAR" }, { "prim": "CDR" } ] } } ]
+      },
+      {
+        "name": "get_balance",
+        "pure": true,
+        "description": "Returns the owner token balance.\n\n        ",
+        "implementations": [
+          {
+            "michelsonStorageView": {
+              "parameter": { "prim": "pair", "args": [ { "prim": "address", "annots": [ "%owner" ] }, { "prim": "nat", "annots": [ "%token_id" ] } ] },
+              "returnType": { "prim": "nat" },
+              "code": [
+                { "prim": "UNPAIR" },
+                { "prim": "SWAP" },
+                { "prim": "DUP" },
+                { "prim": "DUG", "args": [ { "int": "2" } ] },
+                { "prim": "CAR" },
+                { "prim": "CAR" },
+                { "prim": "CDR" },
+                { "prim": "SWAP" },
+                { "prim": "DUP" },
+                { "prim": "DUG", "args": [ { "int": "2" } ] },
+                { "prim": "CDR" },
+                { "prim": "COMPARE" },
+                { "prim": "LT" },
+                { "prim": "IF", "args": [ [], [ { "prim": "PUSH", "args": [ { "prim": "string" }, { "string": "FA2_TOKEN_UNDEFINED" } ] }, { "prim": "FAILWITH" } ] ] },
+                { "prim": "SWAP" },
+                { "prim": "CAR" },
+                { "prim": "GET", "args": [ { "int": "3" } ] },
+                { "prim": "SWAP" },
+                { "prim": "GET" },
+                { "prim": "IF_NONE", "args": [ [ { "prim": "PUSH", "args": [ { "prim": "nat" }, { "int": "0" } ] } ], [] ] }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "is_operator",
+        "pure": true,
+        "description": "Checks if a given token operator exists.\n\n        ",
+        "implementations": [
+          {
+            "michelsonStorageView": {
+              "parameter": {
+                "prim": "pair",
+                "args": [
+                  { "prim": "address", "annots": [ "%owner" ] },
+                  { "prim": "pair", "args": [ { "prim": "address", "annots": [ "%operator" ] }, { "prim": "nat", "annots": [ "%token_id" ] } ] }
+                ]
+              },
+              "returnType": { "prim": "bool" },
+              "code": [
+                { "prim": "UNPAIR" },
+                { "prim": "SWAP" },
+                { "prim": "DUP" },
+                { "prim": "DUG", "args": [ { "int": "2" } ] },
+                { "prim": "CAR" },
+                { "prim": "CAR" },
+                { "prim": "CDR" },
+                { "prim": "SWAP" },
+                { "prim": "DUP" },
+                { "prim": "DUG", "args": [ { "int": "2" } ] },
+                { "prim": "GET", "args": [ { "int": "4" } ] },
+                { "prim": "COMPARE" },
+                { "prim": "LT" },
+                { "prim": "IF", "args": [ [], [ { "prim": "PUSH", "args": [ { "prim": "string" }, { "string": "FA2_TOKEN_UNDEFINED" } ] }, { "prim": "FAILWITH" } ] ] },
+                { "prim": "SWAP" },
+                { "prim": "GET", "args": [ { "int": "3" } ] },
+                { "prim": "CAR" },
+                { "prim": "SWAP" },
+                { "prim": "MEM" }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "token_exists",
+        "pure": true,
+        "description": "Checks if the token exists.\n\n        ",
+        "implementations": [
+          {
+            "michelsonStorageView": {
+              "parameter": { "prim": "nat" },
+              "returnType": { "prim": "bool" },
+              "code": [ { "prim": "UNPAIR" }, { "prim": "SWAP" }, { "prim": "CAR" }, { "prim": "CAR" }, { "prim": "CDR" }, { "prim": "COMPARE" }, { "prim": "GT" } ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "token_metadata",
+        "pure": true,
+        "description": "Returns the token metadata.\n\n        ",
+        "implementations": [
+          {
+            "michelsonStorageView": {
+              "parameter": { "prim": "nat" },
+              "returnType": {
+                "prim": "pair",
+                "args": [ { "prim": "nat", "annots": [ "%token_id" ] }, { "prim": "map", "args": [ { "prim": "string" }, { "prim": "bytes" } ], "annots": [ "%token_info" ] } ]
+              },
+              "code": [
+                { "prim": "UNPAIR" },
+                { "prim": "SWAP" },
+                { "prim": "DUP" },
+                { "prim": "DUG", "args": [ { "int": "2" } ] },
+                { "prim": "CAR" },
+                { "prim": "CAR" },
+                { "prim": "CDR" },
+                { "prim": "SWAP" },
+                { "prim": "DUP" },
+                { "prim": "DUG", "args": [ { "int": "2" } ] },
+                { "prim": "COMPARE" },
+                { "prim": "LT" },
+                { "prim": "IF", "args": [ [], [ { "prim": "PUSH", "args": [ { "prim": "string" }, { "string": "FA2_TOKEN_UNDEFINED" } ] }, { "prim": "FAILWITH" } ] ] },
+                { "prim": "SWAP" },
+                { "prim": "GET", "args": [ { "int": "7" } ] },
+                { "prim": "SWAP" },
+                { "prim": "GET" },
+                { "prim": "IF_NONE", "args": [ [ { "prim": "PUSH", "args": [ { "prim": "int" }, { "int": "399" } ] }, { "prim": "FAILWITH" } ], [] ] }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "token_royalties",
+        "pure": true,
+        "description": "Returns the token royalties information.\n\n        ",
+        "implementations": [
+          {
+            "michelsonStorageView": {
+              "parameter": { "prim": "nat" },
+              "returnType": { "prim": "pair", "args": [ { "prim": "address", "annots": [ "%address" ] }, { "prim": "nat", "annots": [ "%royalties" ] } ] },
+              "code": [
+                { "prim": "UNPAIR" },
+                { "prim": "SWAP" },
+                { "prim": "GET", "args": [ { "int": "8" } ] },
+                { "prim": "SWAP" },
+                { "prim": "GET" },
+                { "prim": "IF_NONE", "args": [ [ { "prim": "PUSH", "args": [ { "prim": "int" }, { "int": "421" } ] }, { "prim": "FAILWITH" } ], [] ] }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "total_supply",
+        "pure": true,
+        "description": "Returns the total supply for a given token id.\n\n        ",
+        "implementations": [
+          {
+            "michelsonStorageView": {
+              "parameter": { "prim": "nat" },
+              "returnType": { "prim": "nat" },
+              "code": [
+                { "prim": "UNPAIR" },
+                { "prim": "SWAP" },
+                { "prim": "DUP" },
+                { "prim": "DUG", "args": [ { "int": "2" } ] },
+                { "prim": "CAR" },
+                { "prim": "CAR" },
+                { "prim": "CDR" },
+                { "prim": "SWAP" },
+                { "prim": "DUP" },
+                { "prim": "DUG", "args": [ { "int": "2" } ] },
+                { "prim": "COMPARE" },
+                { "prim": "LT" },
+                { "prim": "IF", "args": [ [], [ { "prim": "PUSH", "args": [ { "prim": "string" }, { "string": "FA2_TOKEN_UNDEFINED" } ] }, { "prim": "FAILWITH" } ] ] },
+                { "prim": "SWAP" },
+                { "prim": "GET", "args": [ { "int": "5" } ] },
+                { "prim": "SWAP" },
+                { "prim": "GET" },
+                { "prim": "IF_NONE", "args": [ [ { "prim": "PUSH", "args": [ { "prim": "nat" }, { "int": "0" } ] } ], [] ] }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }

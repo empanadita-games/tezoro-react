@@ -7,7 +7,7 @@ const axios = require('axios')
 const TezosContext = createContext();
 const options = {
   name: 'Sapotezos',
-  preferredNetwork: 'ghostnet'
+  preferredNetwork: 'kathmandunet'
  };
   
 const wallet = new BeaconWallet(options);
@@ -27,7 +27,7 @@ export const TezosContextProvider = ({ children }) => {
   
   const [app, setApp] = useState("");
   const [address, setAddress] = useState("");
-  const [tezos, setTezos] = useState(new TezosToolkit("https://ghostnet.tezos.marigold.dev/"));
+  const [tezos, setTezos] = useState(new TezosToolkit("https://kathmandunet.ecadinfra.com/"));
   const [activeAccount, setActiveAccount] = useState("");
  
 
@@ -48,7 +48,7 @@ export const TezosContextProvider = ({ children }) => {
     await wallet.client.clearActiveAccount();
     await wallet.client.requestPermissions({
       network: {
-        type: 'ghostnet',
+        type: 'kathmandunet',
       },
     });
 
@@ -79,9 +79,22 @@ export const TezosContextProvider = ({ children }) => {
     return res.data.hash
   }
 
+  async function sendObjkt() {
+    const res = await axios.post(
+      `http://localhost:2727/sendObjkt`,
+      {
+        to_:'tz1YB9xLAS4Fv5rPongt5XMcX53VSX7MACnC',
+        token_id: 0,
+      },
+        
+    )
+  console.log(res)
+    return res.data.hash
+  }
 
 
-  const wrapped = { ...app, tezos, sync, unsync, sendTezos, activeAccount, address};
+
+  const wrapped = { ...app, tezos, sync, unsync, sendTezos, sendObjkt, activeAccount, address};
 
   return (
    
