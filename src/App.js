@@ -41,6 +41,7 @@ function App() {
     return () => {
       removeEventListener("ReactGetTezos", handleSendTez);
       removeEventListener("TrySyncWallet", handleSync);
+      removeEventListener("BuyHat", handleBuyHat);
     };
   }, [addEventListener, removeEventListener, handleSync, handleSendTez]);
   return(
