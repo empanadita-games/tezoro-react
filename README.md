@@ -55,7 +55,7 @@ It doesn’t matter if you’re new to tezos or a veteran,
 
 ---
 
-Linked Repos
+# Linked Repos
 
 https://github.com/empanadita-games/tezoro-unity  
 https://github.com/empanadita-games/tezoro-react  
@@ -63,7 +63,7 @@ https://github.com/empanadita-games/tezoro-signer
 
 ---
 
-Technical Notes about the Unity -> Blockchain interactions  
+# Technical Notes about the Unity -> Blockchain interactions  
 
 1. We first built a game in Unity, with WebGL as the target platform. We imported .jslib files into the plugins folder and made methods to call them, in order to interact with the react code. This was done following this documentation:    
 
