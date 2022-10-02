@@ -98,12 +98,12 @@ Goodbye y and how to create a wallet in mainnet (soon)
 
 The player learns how to create a real wallet with the experience he gained here. (soon)
 
-Empanadita games
+Empanadita games <br/>
 
-Art & Music - @toronja_gb
-Game Design - @2box_tez
-Unity Programmer - @srezu_tz
-Blockchain Programmer - @tezosmiami
+Art & Music - @toronja_gb <br/>
+Game Design - @2box_tez <br/>
+Unity Programmer - @srezu_tz <br/>
+Blockchain Programmer - @tezosmiami <br/>
 
 
 # Getting Started with Create React App
