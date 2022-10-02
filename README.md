@@ -16,8 +16,8 @@ The project was built by combining Unity, Jslib "plugins", React and a remote si
 https://youtu.be/kDJOZg93aMk
 
 ## Demo site:
-https://tezoro.netlify.app/
-https://tezorogame.tez.pages/
+https://tezoro.netlify.app/  
+https://tezorogame.tez.page/
 
 
 
