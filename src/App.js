@@ -50,7 +50,7 @@ function App() {
 
         {/* {app.address && app.address.substr(0, 5) + "..." + app.address.substr(-5)} */}
       {/* <Link to="/about">about</Link> */}
-      <Link to="/">Sapotezos</Link>
+      <Link to="/">Tezoro</Link>
     
       {
         !app.activeAccount ? "sync in game" :
