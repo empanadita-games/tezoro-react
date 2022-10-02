@@ -30,9 +30,14 @@ function App() {
     app.activeAccount && await app.sendTezos(amount)
   }, [app, sendMessage]);
 
+  const handleGetHat = useCallback(async () => {
+    console.log('get that random')
+  }, [app, sendMessage]);
+
   useEffect(() => {
     addEventListener("ReactGetTezos", handleSendTez);
     addEventListener("TrySyncWallet", handleSync);
+    addEventListener("BuyHat", handleGetHat);
     return () => {
       removeEventListener("ReactGetTezos", handleSendTez);
       removeEventListener("TrySyncWallet", handleSync);
