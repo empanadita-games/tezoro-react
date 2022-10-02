@@ -104,16 +104,3 @@ Art & Music - @toronja_gb <br/>
 Game Design - @2box_tez <br/>
 Unity Programmer - @srezu_tz <br/>
 Blockchain Programmer - @tezosmiami <br/>
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-### `npm run build`
