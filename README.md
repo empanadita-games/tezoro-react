@@ -12,6 +12,12 @@ The project was built by combining Unity, Jslib "plugins", React and a remote si
 Video demo:
 https://youtu.be/kDJOZg93aMk
 
+Demo site:
+https://tezoro.netlify.app/
+
+Contract:
+[Pending deploy - ghostnet is down atm]
+
 ---
 
 
