@@ -86,9 +86,9 @@ this in turn calls the following method:
 
 React.jslib (C code)  
 
-  TrySyncWallet: function() {  
-    window.dispatchReactUnityEvent("TrySyncWallet");  
-  },  
+    TrySyncWallet: function() {  
+        window.dispatchReactUnityEvent("TrySyncWallet");  
+    },  
   
  And this method calls the react method with the same name.  
 
