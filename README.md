@@ -10,13 +10,14 @@ Tezoro is a retro platformer game where newcomers and regular users alike can le
 The project was built by combining Unity, Jslib "plugins", React and a remote signer server.
 
 ## Contract:
-[Pending deploy - ghostnet is down atm]
+KT1GvaDyNfPMev14WU96ewJUwHgfBD9eHJrh
 
 ## Video demo:
 https://youtu.be/kDJOZg93aMk
 
 ## Demo site:
-https://tezoro.netlify.app/
+https://tezoro.netlify.app/  
+[https://tezorogame.tez.page/](https://tezorogame.tez.page/)
 
 
 
@@ -174,3 +175,6 @@ Art & Music - @toronja_gb <br/>
 Game Design - @2box_tez <br/>
 Unity Programmer - @srezu_tz <br/>
 Blockchain Programmer - @tezosmiami <br/>
+
+Other Projects by Team Empanadita
+https://tezrockz.tez.page/
