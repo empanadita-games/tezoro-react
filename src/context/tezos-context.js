@@ -27,7 +27,7 @@ export const TezosContextProvider = ({ children }) => {
   
   const [app, setApp] = useState("");
   const [address, setAddress] = useState("");
-  const [tezos, setTezos] = useState(new TezosToolkit("https://ghostnet.tezos.marigold.dev/"));
+  const [tezos, setTezos] = useState(new TezosToolkit("https://ghostnet.smartpy.io/"));
   const [activeAccount, setActiveAccount] = useState("");
  
 
