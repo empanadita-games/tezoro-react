@@ -7,6 +7,8 @@
 
 Tezoro is a retro platformer game where newcomers and regular users alike can learn about Tezos, create their first wallet on the testnet, receive testnet tezos in a minigame and buy their first NFT.
 
+Video demo:
+https://youtu.be/kDJOZg93aMk
 
 ---
 
