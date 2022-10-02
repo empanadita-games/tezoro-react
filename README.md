@@ -9,8 +9,16 @@ Tezoro is a retro platformer game where newcomers and regular users alike can le
 
 The project was built by combining Unity, Jslib "plugins", React and a remote signer server.
 
-Video demo:
+## Contract:
+[Pending deploy - ghostnet is down atm]
+
+## Video demo:
 https://youtu.be/kDJOZg93aMk
+
+## Demo site:
+https://tezoro.netlify.app/
+
+
 
 ---
 
@@ -152,6 +160,7 @@ The player collects tezos in a mini-game and then gets them airdropped to their 
 Acquire an NFT
 
 The player visits a hat shop called FXHAT and gets airdropped a random hat to his ghostnet wallet, as a memento of his adventure.
+This is done through another webrequest with a random token_id chosen by Unity.
 
 # Phase 4
 ## Ciudad Tezoro
