@@ -63,9 +63,8 @@ Create a testnet wallet
 
 A call is made from Unity to React using a jslib plugin. React prompts beacon to connect a wallet.
 The player is instructed to login with kukai+gmail for ease of use, but they also learn about the more secure 24 words method.
-![image](https://user-images.githubusercontent.com/40881833/193447861-bb5610e7-9b00-4667-911e-d0103633527b.png)
 
-![image](https://user-images.githubusercontent.com/40881833/193447827-997311bb-fc07-4117-ae32-0ce8b3f4c75e.png)
+![image](https://user-images.githubusercontent.com/40881833/193447861-bb5610e7-9b00-4667-911e-d0103633527b.png)
 ![image](https://user-images.githubusercontent.com/40881833/193447791-8a003628-a5cc-4d45-9a49-a58b9c8f4813.png)
 ![image](https://user-images.githubusercontent.com/40881833/193447814-3d5d5418-3766-4ff7-92ef-2a2ecc6f6727.png)
 ![image](https://user-images.githubusercontent.com/40881833/193447871-224e3dc8-32ab-449a-8345-4c5f535f249b.png)
