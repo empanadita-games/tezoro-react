@@ -7,6 +7,8 @@
 
 Tezoro is a retro platformer game where newcomers and regular users alike can learn about Tezos, create their first wallet on the testnet, receive testnet tezos in a minigame and buy their first NFT.
 
+The project was built by combining Unity, Jslib "plugins", React and a remote signer server.
+
 Video demo:
 https://youtu.be/kDJOZg93aMk
 
@@ -58,8 +60,11 @@ It doesn’t matter if you’re new to tezos or a veteran,
 # Linked Repos
 
 https://github.com/empanadita-games/tezoro-unity  
+The main game project, containing also the jslib methods to communicate with react and also the webrequest code.
 https://github.com/empanadita-games/tezoro-react  
+The react website where the build files from Unity where placed. It has the tools to communicate with the blockchain.
 https://github.com/empanadita-games/tezoro-signer  
+A remote signer server for our webrquests sent from Unity.
 
 ---
 
@@ -67,6 +72,7 @@ https://github.com/empanadita-games/tezoro-signer
 
 1. We first built a game in Unity, with WebGL as the target platform. We imported .jslib files into the plugins folder and made methods to call them, in order to interact with the react code. This was done following this documentation:    
 
+https://docs.unity3d.com/Manual/webgl-interactingwithbrowserscripting.html
 https://react-unity-webgl.dev/docs/api/event-system    
 
 Unity -> React  
@@ -84,7 +90,7 @@ Gamecontroller.cs (C# code)
 
 this in turn calls the following method:  
 
-React.jslib (C code)  
+React.jslib (JS code)  
 
     TrySyncWallet: function() {  
         window.dispatchReactUnityEvent("TrySyncWallet");  
