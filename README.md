@@ -1,3 +1,101 @@
+# 🐸 Tezoro 🐸
+
+
+![Foto_de_perfil](https://user-images.githubusercontent.com/40881833/193447541-f75be454-ed80-466e-9c92-e7f2a17a1a4d.png)
+
+
+
+Tezoro is a retro platformer game where newcomers and regular users alike can learn about Tezos, create their first wallet on the testnet, receive testnet tezos in a minigame and buy their first NFT.
+
+
+---
+
+
+# Characters
+
+
+
+* Tezoro \
+ \
+A wizard frog that can make tezos rain with his powers. He is all about creating community and teaching newcomers by doing.
+* The player (you) \
+ \
+You are the protagonist in this story. This is the beginning of your journey with Tezos. Learn to create a wallet with kukai in the safety of the testnet. \
+It doesn’t matter if you’re new to tezos or a veteran,
+
+
+---
+
+
+# Objetives:
+
+
+
+* Teach new users how to create a wallet
+* Teach general users about the testnet
+* Teach the meaning of approving a site to connect to your wallet
+* Teach the user about about transactions (soon)
+* Teach the user how to mint an NFT (soon)
+
+
+---
+
+
+# Controls:
+
+
+
+* **Movement: Arrows/WASD**
+* **Jump: Spacebar**
+* **Mobile controls (soon)**
+![image](https://user-images.githubusercontent.com/40881833/193447842-2ecf8805-9814-4c2f-8233-0ef01f68f0c6.png)
+
+
+---
+
+
+# Gameplay:
+
+
+# Phase 1: 
+Woods
+Create a testnet wallet
+
+A call is made from Unity to React using a jslib plugin. React prompts beacon to connect a wallet.
+The player is instructed to login with kukai+gmail for ease of use, but they also learn about the more secure 24 words method.
+
+![image](https://user-images.githubusercontent.com/40881833/193447861-bb5610e7-9b00-4667-911e-d0103633527b.png)
+![image](https://user-images.githubusercontent.com/40881833/193447791-8a003628-a5cc-4d45-9a49-a58b9c8f4813.png)
+![image](https://user-images.githubusercontent.com/40881833/193447814-3d5d5418-3766-4ff7-92ef-2a2ecc6f6727.png)
+![image](https://user-images.githubusercontent.com/40881833/193447871-224e3dc8-32ab-449a-8345-4c5f535f249b.png)
+
+
+# Phase 2
+## Woods
+Get Testnet Tezos
+
+The wizard frog makes the sky rain tezos.
+The player collects tezos in a mini-game and then gets them airdropped to their testnet wallet using a remote server signer which is called from Unity with a webrequest using json.
+
+![image](https://user-images.githubusercontent.com/40881833/193447896-01e20c10-81a9-4a76-a397-60aca6b7e04f.png)
+![image](https://user-images.githubusercontent.com/40881833/193447915-16a3551a-dcb7-4d2d-9013-561e573c4c60.png)
+
+
+# Phase 3 
+## Tezoro City
+
+![image](https://user-images.githubusercontent.com/40881833/193447941-c4484fbb-4606-4d17-9b03-c371d7f26e31.png)
+
+Acquire an NFT
+
+The player visits a hat shop called FXHAT and gets airdropped a random hat to his ghostnet wallet, as a memento of his adventure.
+
+# Phase 4
+## Ciudad Tezoro
+Goodbye y and how to create a wallet in mainnet (soon)
+
+The player learns how to create a real wallet with the experience he gained here. (soon)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -8,63 +106,4 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
