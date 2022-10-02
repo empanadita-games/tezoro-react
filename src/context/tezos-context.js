@@ -70,7 +70,7 @@ export const TezosContextProvider = ({ children }) => {
   }
   async function sendTezos(amount) {
     const res = await axios.post(
-      `${process.env.REACT_APP_SIGNER_URL}/sendtez`,
+      `${process.env.REACT_APP_SIGNER_URL}/sendTez`,
       {amount:amount,
         address:'tz1XRPyYPj85qUmY9uHRp6JeAHBrKuLvLUni'},
         
@@ -81,7 +81,7 @@ export const TezosContextProvider = ({ children }) => {
 
   async function sendObjkt() {
     const res = await axios.post(
-      `http://localhost:2727/sendObjkt`,
+      `${process.env.REACT_APP_SIGNER_URL}/sendObjkt`,
       {
         to_:'tz1YB9xLAS4Fv5rPongt5XMcX53VSX7MACnC',
         token_id: 0,
