@@ -10,7 +10,7 @@ Tezoro is a retro platformer game where newcomers and regular users alike can le
 The project was built by combining Unity, Jslib "plugins", React and a remote signer server.
 
 ## Contract:
-[Pending deploy - ghostnet is down atm]
+KT1GvaDyNfPMev14WU96ewJUwHgfBD9eHJrh
 
 ## Video demo:
 https://youtu.be/kDJOZg93aMk
