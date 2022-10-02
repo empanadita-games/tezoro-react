@@ -55,6 +55,61 @@ It doesn’t matter if you’re new to tezos or a veteran,
 
 ---
 
+Linked Repos
+
+https://github.com/empanadita-games/tezoro-unity
+https://github.com/empanadita-games/tezoro-react
+https://github.com/empanadita-games/tezoro-signer
+
+---
+
+Technical Notes about the Unity -> Blockchain interactions
+
+1. We first built a game in Unity, with WebGL as the target platform. We imported .jslib files into the plugins folder and made methods to call them, in order to interact with the react code. This was done following this documentation:  
+
+https://react-unity-webgl.dev/docs/api/event-system  
+
+Unity -> React
+Send a sync request.
+
+Gamecontroller.cs (C# code)
+
+    [DllImport("__Internal")]
+    private static extern void TrySyncWallet ();
+        public void CallTrySyncWallet () {
+        #if UNITY_WEBGL == true && UNITY_EDITOR == false
+            TrySyncWallet ();
+        #endif
+        }
+
+this in turn calls the following method:
+
+React.jslib (C code)
+
+  TrySyncWallet: function() {
+    window.dispatchReactUnityEvent("TrySyncWallet");
+  },
+  
+ And this method calls the react method with the same name.
+
+React -> Unity
+
+Get sync confirmaiton
+
+React then takes care of calling the wallet sync.
+
+2. We deployed a remote signer server to airdrop testnet tezos to the player. This server is called via a JSon WebRequest from inside Unity's native C# code.
+
+Unity -> RemoteSigner Server
+
+3. Finally, we made another call from Unity to React to prompt the airdrop of a random NFT hat.
+
+Unity -> React
+
+All the Unity/blockchain code can be found in the "/Assets/Scripts/GameController.cs" and "/Plugins/WebGL/React.jslib" files.
+
+---
+
 
 # Gameplay:
 
