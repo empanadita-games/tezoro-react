@@ -12,7 +12,7 @@ The project was built by combining Unity, Jslib "plugins", React and a remote si
 Project developed for the Metamorphosis hackathon.
 
 ## Contract:
-KT1GvaDyNfPMev14WU96ewJUwHgfBD9eHJrh
+Ghostnet: KT1GvaDyNfPMev14WU96ewJUwHgfBD9eHJrh
 
 ## Video demo:
 https://youtu.be/kDJOZg93aMk
@@ -36,7 +36,7 @@ A wizard frog that can make tezos rain with his powers. He is all about creating
 * The player (you) \
  \
 You are the protagonist in this story. This is the beginning of your journey with Tezos. Learn to create a wallet with kukai in the safety of the testnet. \
-It doesn’t matter if you’re new to tezos or a veteran,
+It doesn’t matter if you’re new to tezos or a tezos veteran. . .
 
 
 ---
@@ -115,13 +115,14 @@ Get sync confirmaiton
 
 React then takes care of calling the wallet sync.  
 
-2. We deployed a remote signer server to airdrop testnet tezos to the player. This server is called via a JSon WebRequest from inside Unity's native C# code.  
+2. We deployed a remote signer server to airdrop testnet tezos and nfts to the player. This server is called via a JSon WebRequest from inside Unity's native C# code.  
+
+3. Finally, we made another call to the remote signer to prompt the airdrop of a random NFT hat.
 
 Unity -> RemoteSigner Server  
 
-3. Finally, we made another call from Unity to React to prompt the airdrop of a random NFT hat.  
+3. Finally, we made another call to the remote signer to prompt the airdrop of a random NFT hat.  
 
-Unity -> React  
 
 All the Unity/blockchain code can be found in the "/Assets/Scripts/GameController.cs" and "/Plugins/WebGL/React.jslib" files.  
 
@@ -133,7 +134,7 @@ All the Unity/blockchain code can be found in the "/Assets/Scripts/GameControlle
 
 # Phase 1: 
 Woods
-Create a testnet wallet
+Create a testnet wallet on ghostnet
 
 A call is made from Unity to React using a jslib plugin. React prompts beacon to connect a wallet.
 The player is instructed to login with kukai+gmail for ease of use, but they also learn about the more secure 24 words method.
@@ -174,9 +175,9 @@ The player learns how to create a real wallet with the experience he gained here
 Empanadita games <br/>
 
 Art & Music - @toronja_gb <br/>
-Game Design - @2box_tez <br/>
-Unity Programmer - @srezu_tz <br/>
-Blockchain Programmer - @tezosmiami <br/>
+Game Design & Development - @2box_tez <br/>
+Game Development - @srezu_tz <br/>
+React & Blockchain Development - @tezosmiami <br/>
 
 Other Projects by Team Empanadita
 https://tezrockz.tez.page/
