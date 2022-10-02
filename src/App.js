@@ -51,9 +51,13 @@ function App() {
         {/* {app.address && app.address.substr(0, 5) + "..." + app.address.substr(-5)} */}
       {/* <Link to="/about">about</Link> */}
       <Link to="/">Sapotezos</Link>
-      <button onClick={() => !app.activeAccount ? app.sync() : app.unsync()}> 
-        {!app.activeAccount ? "wallet not synced" : `${app.address.substr(0, 5) + "..." + app.address.substr(-5)}: unsync` }
+    
+      {
+        !app.activeAccount ? "sync in game" :
+        <button onClick={() => !app.activeAccount ? app.sync() : app.unsync()}> 
+        {`${app.address.substr(0, 5) + "..." + app.address.substr(-5)} / unsync`} 
       </button>
+      }
       </header>
       <p/>
 
