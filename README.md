@@ -9,6 +9,8 @@ Tezoro is a retro platformer game where newcomers and regular users alike can le
 
 The project was built by combining Unity, Jslib "plugins", React and a remote signer server.
 
+Project developed for the Metamorphosis hackathon.
+
 ## Contract:
 KT1GvaDyNfPMev14WU96ewJUwHgfBD9eHJrh
 
@@ -165,7 +167,7 @@ This is done through another webrequest with a random token_id chosen by Unity.
 
 # Phase 4
 ## Ciudad Tezoro
-Goodbye y and how to create a wallet in mainnet (soon)
+Goodbye and how to create a wallet in mainnet (soon)
 
 The player learns how to create a real wallet with the experience he gained here. (soon)
 
