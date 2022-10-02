@@ -175,3 +175,6 @@ Art & Music - @toronja_gb <br/>
 Game Design - @2box_tez <br/>
 Unity Programmer - @srezu_tz <br/>
 Blockchain Programmer - @tezosmiami <br/>
+
+Other Projects by Team Empanadita
+https://tezrockz.tez.page/
