@@ -17,7 +17,7 @@ https://youtu.be/kDJOZg93aMk
 
 ## Demo site:
 https://tezoro.netlify.app/  
-https://tezorogame.tez.page/
+[https://tezorogame.tez.page/](https://tezorogame.tez.page/)
 
 
 
