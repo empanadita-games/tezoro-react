@@ -62,6 +62,7 @@ function App() {
       <p/>
 
     <div style={{border:'5px solid black', padding: '11px', width: '63vw'}}>
+        {!isLoaded && 'Loading. . .'}
        <Unity
       style={{  
         height: "auto",
