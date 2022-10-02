@@ -152,6 +152,7 @@ The player collects tezos in a mini-game and then gets them airdropped to their 
 Acquire an NFT
 
 The player visits a hat shop called FXHAT and gets airdropped a random hat to his ghostnet wallet, as a memento of his adventure.
+This is done through another webrequest with a random token_id chosen by Unity.
 
 # Phase 4
 ## Ciudad Tezoro
